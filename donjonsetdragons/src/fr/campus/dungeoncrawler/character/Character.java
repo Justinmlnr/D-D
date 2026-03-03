@@ -18,6 +18,6 @@ public  abstract class Character {
     @Override
     public String toString() {
 
-        return "P";
+        return "Personnage : " + name + " " + "Type : " + type + " " + "HP : " + hp + " " + " ATK : " + atkLevel;
     }
 }
