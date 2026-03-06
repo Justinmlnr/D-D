@@ -1,0 +1,44 @@
+package fr.campus.dungeoncrawler;
+
+public class DefensiveEquipment {
+    private String type;
+    private int defenseLevel;
+    private String name;
+
+    public DefensiveEquipment(String type, int defenseLevel, String name) {
+        this.type = type;
+        this.defenseLevel = defenseLevel;
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getDefenseLevel() {
+        return defenseLevel;
+    }
+
+    public void setDefenseLevel(int defenseLevel) {
+        this.defenseLevel = defenseLevel;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "nom : " + name +
+                ", type : " + type +
+                ", Niveau de defense : " + defenseLevel + ".";
+    }
+}
