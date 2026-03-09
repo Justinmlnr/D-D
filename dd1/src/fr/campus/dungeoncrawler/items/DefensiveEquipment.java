@@ -1,13 +1,13 @@
-package fr.campus.dungeoncrawler;
+package fr.campus.dungeoncrawler.items;
 
-public class OffensiveEquipment {
+public abstract class DefensiveEquipment {
     private String type;
-    private int attackLevel;
+    private int defenseLevel;
     private String name;
 
-    public OffensiveEquipment(String type, int attackLevel, String name) {
+    public DefensiveEquipment(String type, int defenseLevel, String name) {
         this.type = type;
-        this.attackLevel = attackLevel;
+        this.defenseLevel = defenseLevel;
         this.name = name;
     }
 
@@ -19,12 +19,12 @@ public class OffensiveEquipment {
         this.type = type;
     }
 
-    public int getAttackLevel() {
-        return attackLevel;
+    public int getDefenseLevel() {
+        return defenseLevel;
     }
 
-    public void setAttackLevel(int attackLevel) {
-        this.attackLevel = attackLevel;
+    public void setDefenseLevel(int defenseLevel) {
+        this.defenseLevel = defenseLevel;
     }
 
     public String getName() {
@@ -39,6 +39,6 @@ public class OffensiveEquipment {
     public String toString() {
         return "nom : " + name +
                 ", type : " + type +
-                ", Niveau d'attaque : " + attackLevel + ".";
+                ", Niveau de defense : " + defenseLevel + ".";
     }
 }

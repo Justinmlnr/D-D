@@ -1,7 +1,10 @@
-package fr.campus.dungeoncrawler;
+package fr.campus.dungeoncrawler.character;
+
+import fr.campus.dungeoncrawler.items.DefensiveEquipment;
+import fr.campus.dungeoncrawler.items.OffensiveEquipment;
 
 // Déclarer les attributs (les variables de la classe)
-public class Character {
+public abstract class Character {
     private String type; // attribut
     private String name;
     private int lifeLevel;
