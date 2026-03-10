@@ -25,7 +25,7 @@ public class Menu {
         return scanner.nextLine();
     }
 
-    public int showCharacterCreationMenu () {
+    public Integer showCharacterCreationMenu () {
         System.out.println("1 - Afficher toutes les infos du personnage");
         System.out.println("2 - Modifier ses infos");
         System.out.println("3 - Quitter le jeu");

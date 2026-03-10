@@ -62,6 +62,14 @@ public abstract class Character {
         this.offensiveEquipment = offensiveEquipment;
     }
 
+    public DefensiveEquipment getDefensiveEquipment() {
+        return defensiveEquipment;
+    }
+
+    public void setDefensiveEquipment(DefensiveEquipment defensiveEquipment) {
+        this.defensiveEquipment = defensiveEquipment;
+    }
+
     @Override
     public String toString() {
         return  "type = " + type +
@@ -70,13 +78,5 @@ public abstract class Character {
                 ", Niveau d'attaque = " + attackLevel +
                 ", Equipement offensif = " + offensiveEquipment +
                 ", Equipement défensif = " + defensiveEquipment + ".";
-    }
-
-    public DefensiveEquipment getDefensiveEquipment() {
-        return defensiveEquipment;
-    }
-
-    public void setDefensiveEquipment(DefensiveEquipment defensiveEquipment) {
-        this.defensiveEquipment = defensiveEquipment;
     }
 }

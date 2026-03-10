@@ -2,6 +2,8 @@ package fr.campus.dungeoncrawler;
 import fr.campus.dungeoncrawler.character.Character;
 import fr.campus.dungeoncrawler.character.Warrior;
 import fr.campus.dungeoncrawler.character.Wizard;
+import fr.campus.dungeoncrawler.items.Shield;
+import fr.campus.dungeoncrawler.items.Weapon;
 
 import java.util.Scanner;
 
@@ -22,6 +24,8 @@ public class Game {
             Character character;
             if (typeChoice == 1) {
                 typeName = "Warrior";
+                Weapon weapon = new Weapon(String type, int attackLevel, String name);
+                Shield shield = new Shield(String type, int defenseLevel, String name);
                 character = new Warrior(typeName, name, 0, 0, null, null);
             } else {
                 typeName = "Wizard";
