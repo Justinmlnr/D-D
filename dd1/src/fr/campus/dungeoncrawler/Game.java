@@ -2,7 +2,9 @@ package fr.campus.dungeoncrawler;
 import fr.campus.dungeoncrawler.character.Character;
 import fr.campus.dungeoncrawler.character.Warrior;
 import fr.campus.dungeoncrawler.character.Wizard;
+import fr.campus.dungeoncrawler.items.Potion;
 import fr.campus.dungeoncrawler.items.Shield;
+import fr.campus.dungeoncrawler.items.Spell;
 import fr.campus.dungeoncrawler.items.Weapon;
 
 import java.util.Scanner;
@@ -24,12 +26,14 @@ public class Game {
             Character character;
             if (typeChoice == 1) {
                 typeName = "Warrior";
-                Weapon weapon = new Weapon(String type, int attackLevel, String name);
-                Shield shield = new Shield(String type, int defenseLevel, String name);
-                character = new Warrior(typeName, name, 0, 0, null, null);
+                Weapon weapon = new Weapon("Weapon", 0, "Weapon");
+                Shield shield = new Shield("Shield", 0, "Shield");
+                character = new Warrior(typeName, name, 0, 0, weapon, shield);
             } else {
                 typeName = "Wizard";
-                character = new Wizard(typeName, name, 0, 0, null, null);
+                Spell spell = new Spell("Spell", 0, "Spell");
+                Potion potion = new Potion("Potion", 0, "Potion");
+                character = new Wizard(typeName, name, 0, 0, spell, potion);
             }
             System.out.println("Type choisi : " + typeName + ", Nom : " + name );
 
