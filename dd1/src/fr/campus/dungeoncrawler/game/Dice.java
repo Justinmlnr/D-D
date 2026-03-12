@@ -1,4 +1,4 @@
-package fr.campus.dungeoncrawler;
+package fr.campus.dungeoncrawler.game;
 
 import java.util.Random;
 

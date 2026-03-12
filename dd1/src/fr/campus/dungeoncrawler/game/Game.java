@@ -1,4 +1,5 @@
-package fr.campus.dungeoncrawler;
+package fr.campus.dungeoncrawler.game;
+import fr.campus.dungeoncrawler.OutOfBoardException;
 import fr.campus.dungeoncrawler.character.Character;
 import fr.campus.dungeoncrawler.character.Warrior;
 import fr.campus.dungeoncrawler.character.Wizard;
@@ -15,6 +16,11 @@ public class Game {
     private Scanner scanner = new Scanner(System.in);
     private final int boardSize = 64;
 
+    /**
+     * Gère le menu principal du jeu, la création du personnage
+     * et le lancement de la partie.
+     * @param menu le menu utilisé pour interagir avec l'utilisateur
+     */
     public  void run ( Menu menu) {
         int choice = menu.showMainMenu();
 
@@ -55,7 +61,12 @@ public class Game {
                     break;
                 } else if (creationChoice == 4) {
                     Game newGame = new Game();
-                    newGame.startGame();
+
+                    try {
+                        newGame.startGame();
+                    } catch (OutOfBoardException e) {
+                        System.out.println(e.getMessage());
+                    }
                 } else {
                     System.out.print("Choix invalide");
                 }
@@ -66,7 +77,12 @@ public class Game {
         }
     }
 
-    public void startGame () {
+    /**
+     * Lance une partie, gère le déplacement du joueur sur le plateau
+     * et propose de recommencer ou quitter à la fin.
+     * @throws OutOfBoardException si la position du joueur dépasse la taille du plateau
+     */
+    public void startGame () throws OutOfBoardException {
     dice = new Dice ();
     boolean replay = true;
 
@@ -82,6 +98,9 @@ public class Game {
             int result = dice.roll();
             System.out.println("Dé : " + result + ".");
             position = position + result;
+                if (position > boardSize) {
+                    throw new OutOfBoardException("Le joueur a dépassé la fin du plateau");
+                }
             displayBoard();
             System.out.println("case :" + position + "/" + boardSize);
         }
@@ -103,6 +122,9 @@ public class Game {
 
     }
 
+    /**
+     * Affiche le plateau de jeu sur une ligne et montre la position du joueur.
+     */
     public void displayBoard () {
         for ( int i = 0; i < boardSize; i++) {
             if ( i == position - 1) {
